@@ -8,18 +8,17 @@
   /* FONTS */
   --font-family: "Raleway", sans-serif;
 
-  --title-lg: 700 3rem/auto var(--font-family);
+  --title-lg: 700 1.75rem/auto var(--font-family);
   --title-md: 700 2.5rem/auto var(--font-family);
-  --title-sm: 700 2rem/auto var(--font-family);
-  --title-xs: 700 1rem/auto var(--font-family);
-  --subtitle: 500 2rem/2 var(--font-family);
-  --body-lg-reg: 400 1.25rem/1.4 var(--font-family);
+  --title-sm: 700 1.5rem/auto var(--font-family);
+  --subtitle: 500 1rem/1.4 var(--font-family);
+  --body-lg-reg: 400 .875rem/1.4 var(--font-family);
   --body-lg-bold: 700 1.25rem/1.4 var(--font-family);
-  --body-md-reg: 400 1rem/1.4 var(--font-family);
+  --body-md-reg: 400 .875rem/1.4 var(--font-family);
   --body-md-bold: 700 1rem/1.4 var(--font-family);
   --body-sm-reg: 400 .875rem/1.4 var(--font-family);
   --body-md-bold: 700 .875rem/1.4 var(--font-family);
-  --body-xs-reg: 700 .75rem/1.4 var(--font-family);
+  --body-xs-reg: 700 .625rem/1.4 var(--font-family);
   --body-md-bold: 700 .75rem/1.4 var(--font-family);
   --button: 700 .875rem/auto var(--font-family);
   --link: 500 .875rem/auto var(--font-family);
@@ -45,4 +44,22 @@
   --pink-base: #9547a5;
   --pink-dark: #7d298a;
   --pink-low: #3f0f41; 
+}
+
+body {
+   background-color: var(--shape-background);
+}
+
+@media (width >= 90em) {
+  
+  :root {
+    --title-lg: 700 3rem/auto var(--font-family);
+    --title-md: 700 2.5rem/auto var(--font-family);
+    --title-sm: 700 2rem/auto var(--font-family);
+    --title-xs: 700 1rem/auto var(--font-family);
+    --subtitle: 500 2rem/2 var(--font-family);
+    --body-lg-reg: 400 1.25rem/1.4 var(--font-family);
+    --body-md-reg: 400 1rem/1.4 var(--font-family);
+  }
+
 }
