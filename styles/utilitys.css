@@ -1,0 +1,29 @@
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.gap-12 {
+  gap: .75rem;
+}
+
+.gap-16 {
+  gap: 1rem;
+}
+
+.tag {
+  text-transform: uppercase;
+}
+
+.desktop-only {
+  display: none;
+}
+
+@media (width >= 90em) {
+  .desktop-only {
+    display: initial;
+  }
+}
