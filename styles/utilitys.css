@@ -6,6 +6,10 @@
   display: grid;
 }
 
+.items-center {
+  align-items: center;
+}
+
 .gap-12 {
   gap: .75rem;
 }

@@ -1,0 +1,29 @@
+#hero {
+
+  & header {
+  display: flex;
+  justify-content: space-between;
+  width: 20.93rem;
+
+  margin: 1.25rem auto;
+
+    & img {
+      width: 4.035rem;
+      height: 3rem;
+    }
+
+    & .button {
+      align-self: flex-start;
+    }
+  }
+}
+
+@media (width >= 90em) {
+
+  #hero {
+    
+    & header {
+      width: 70rem;
+    }
+  }
+}
