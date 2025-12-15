@@ -50,7 +50,7 @@
       gap: 1rem;  
       
       & h1 {
-        opacity: 5%;
+        opacity: .1;
         animation: appear-delay 800ms 300ms linear forwards;
       }
 
@@ -76,10 +76,10 @@
 
     & img {
       scale: .1%;
-      animation: appear-img 800ms ease-in forwards;
     }
-
+    
     & img[src*="spellbook"] {
+      animation: appear-img-mobile 800ms ease-in forwards;
       width: 2.5rem;
       aspect-ratio: 1/1;
       object-fit: cover;
@@ -97,6 +97,7 @@
 
 
     & img[src*="planchette"] {
+      animation: appear-img-mobile 800ms ease-in 400ms forwards;
       width: 2rem;
       aspect-ratio: 1/1;
       object-fit: cover;
@@ -113,6 +114,7 @@
     }
 
     & img[src*="ball"] {
+      animation: appear-img-mobile 800ms ease-in 800ms forwards;
       width: 2.5rem;
       height: 2.5rem;
       object-fit: cover;
@@ -178,12 +180,14 @@
       padding-block: 6rem 4.75rem;
       position: relative;
 
+      opacity: 0;
+      animation: appear-delay 800ms 600ms linear forwards;
+
       & .wrap {
         display: inline;
         flex-wrap: wrap;
         justify-content: center;
         text-align: center;
-
         
         & p {
           display: inline;
@@ -192,6 +196,26 @@
           opacity: .5;
 
           transition: opacity 300ms;
+
+          &:nth-child(2) {
+            opacity: .5;
+            transition-delay: 600ms;
+            
+            & span {       
+              transition-delay: 600ms;
+              color: var(--blue-light);
+            } 
+          }
+
+            &:nth-child(3) {
+              opacity: .5;
+              transition-delay: 1000ms;
+              
+              & span {       
+                transition-delay: 1000ms;
+                color: var(--blue-light);
+              } 
+            }
 
 
           & span {
@@ -205,22 +229,25 @@
       }
 
       & img {
-        scale: .1%;
-        opacity: 0;
-        transition: all 700ms ease;
+        scale: .001;
+        opacity: 1;
       }
       
       
       & img[src*="spellbook"] {
-        animation: scaleDown 700ms ease forwards;
+        transition: all 300ms ease;
       }
 
       & img[src*="planchette"] {
-        animation: disappear 700ms ease forwards;
+        transition: 
+        all 300ms ease,
+        scale 300ms 600ms ease;
       }
 
       & img[src*="ball"] {
-        animation: disappear 700ms ease forwards;
+        transition: 
+        all 300ms ease,
+        scale 300ms 1000ms ease;
       }
       
       &:hover {
@@ -255,17 +282,9 @@
           }
         }
 
-        
-        & img[src*="spellbook"] {
-          animation: appear-img 500ms 0s ease-in forwards;  
-        }
-        
-        & img[src*="planchette"] {
-          animation: appear-img 500ms 500ms ease-in forwards;
-        }
-
-        & img[src*="ball"] {
-          animation: appear-img 500ms 1000ms ease-in forwards;
+        & img {
+          scale: 1;
+          opacity: 1;
         }
       }
       
@@ -275,13 +294,6 @@
         object-fit: cover;
         margin: 0;
         rotate: 20.76deg;
-
-        transform: scale(1);
-        transition: transform 300ms linear;
-
-        &:hover {
-          transform: scale(1.1) rotate(10deg)  ;
-        }
       }
 
       & img[src*="planchette"] {
@@ -290,13 +302,6 @@
         object-fit: cover;
         rotate: 99.47deg;
         position: initial;
-
-        transform: scale(1);
-        transition: transform 300ms linear;
-
-        &:hover {
-          transform: scale(1.1) rotate(10deg)  ;
-        }
       }
 
       & img[src*="ball"] {
@@ -305,13 +310,6 @@
         object-fit: cover;
         rotate: -14.48deg;
         position: initial;
-
-        transform: scale(1);
-        transition: transform 300ms linear;
-
-        &:hover {
-          transform: scale(1.1) rotate(10deg)  ;
-        }
       }
     }
   }
@@ -331,6 +329,25 @@
   to {
     opacity: 1;
   }
+}
+
+@media (width < 90em) {
+  @keyframes appear-img-mobile {
+  0% {
+    scale: .1%;
+    opacity: 0;
+  }
+
+  30% {
+    scale: 1.05;
+    opacity: 1;
+  }
+  
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
 }
 
 @keyframes appear-img {
@@ -373,3 +390,5 @@
     opacity: 0;
   }
 }
+
+
