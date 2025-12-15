@@ -26,8 +26,16 @@
   display: none;
 }
 
+.mobile-only {
+  display: initial;
+}
+
 @media (width >= 90em) {
   .desktop-only {
     display: initial;
+  }
+
+  .mobile-only {
+    display: none;
   }
 }

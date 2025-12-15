@@ -47,7 +47,23 @@
 }
 
 body {
-   background-color: var(--shape-background);
+  margin-inline: auto;
+  background-color: var(--shape-background);
+  overflow-x: hidden;
+}
+
+html {
+  zoom: 1;
+}
+
+h1 {
+  font: var(--title-lg);
+  color: var(--text-title);
+}
+
+p {
+  font: var(--body-lg-reg);
+  color: var(--text-body);
 }
 
 a {
@@ -68,4 +84,7 @@ a {
     --body-md-reg: 400 1rem/1.4 var(--font-family);
   }
 
+  body {
+    width: 90rem;
+  }
 }
