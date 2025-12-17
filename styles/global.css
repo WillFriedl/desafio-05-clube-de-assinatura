@@ -18,7 +18,7 @@
   --body-md-bold: 700 1rem/1.4 var(--font-family);
   --body-sm-reg: 400 .875rem/1.4 var(--font-family);
   --body-md-bold: 700 .875rem/1.4 var(--font-family);
-  --body-xs-reg: 700 .625rem/1.4 var(--font-family);
+  --body-xs-reg: 400 .625rem/normal var(--font-family);
   --body-md-bold: 700 .75rem/1.4 var(--font-family);
   --button: 700 .875rem/normal var(--font-family);
   --link: 500 .875rem/normal var(--font-family);
@@ -47,9 +47,9 @@
 }
 
 body {
-  margin-inline: auto;
   background-color: var(--shape-background);
   overflow-x: hidden;
+  margin-inline: auto;
 }
 
 html {
