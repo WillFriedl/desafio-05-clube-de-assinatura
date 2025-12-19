@@ -1,0 +1,106 @@
+#footer {
+  padding: 6.125rem 2rem 2.375rem;
+  width: 23.437rem;
+  height: 25.937rem;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  background: url(../assets/footer/book-trace-background-mobile.png) no-repeat;
+  background-position: bottom center;
+  background-size: contain;
+
+  & > div {
+    display: grid;
+    justify-items: center;
+  }
+
+  & .social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 19.437rem;
+    margin-top: .75rem;
+    padding: 1.25rem .625rem .75rem;
+    border-top: 1px solid var(--shape-stroke);
+
+    & a {
+      position: relative;
+      z-index: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 2.5rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        transition: all .3s linear;
+        background-color: transparent;
+      }
+    }
+
+    & a {
+      cursor: pointer;
+      &:hover {
+        & svg path {
+          fill: var(--text-title);
+          transition: all .3s linear;
+        }
+        &::before {
+          background-color: var(--blue-low);
+        }
+      }
+    }
+  }
+
+
+  & .links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+
+    & h1 {
+      font: var(--title-xs);
+      margin-bottom: 1.25rem;
+    }
+
+    & ul {
+      display: grid;
+      gap: .75rem;
+
+      & li:hover {
+        & a {
+          color: var(--text-body);
+        }
+      }
+
+      & li a {
+        font: var(--link);
+        color: var(--blue-light);
+      }
+    }
+  }
+}
+
+@media (width >= 90em) {
+  #footer {
+    width: 90rem;
+    background: url(../assets/footer/book-trace-background.png) no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 10.625rem 10rem 6.375rem;
+
+    & .links {
+      gap: 3.5rem;
+    }
+  }
+}

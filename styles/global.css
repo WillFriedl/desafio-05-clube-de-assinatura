@@ -53,11 +53,6 @@ body {
   margin-inline: auto;
 }
 
-html {
-
-  zoom: .5;
-}
-
 h1 {
   font: var(--title-lg);
   color: var(--text-title);
