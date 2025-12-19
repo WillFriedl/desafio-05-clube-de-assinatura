@@ -312,10 +312,11 @@
         }
       }
     }
+    
+    @keyframes slide {
+    }
   }
 
-@keyframes slide {
-}
 
 @keyframes card-1-in {
   0% {
