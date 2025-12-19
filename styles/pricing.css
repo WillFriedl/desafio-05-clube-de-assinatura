@@ -1,0 +1,394 @@
+#pricing {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  padding-block: 6.5rem;
+  overflow: hidden;
+  margin-inline: auto;
+  gap: 3rem;
+
+  & h1 {
+    font: var(--title-sm);
+    color: var(--text-body);
+  }
+  
+  & .cards-wrapper {
+    padding-inline: 2rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    
+    & .slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      white-space: nowrap;
+      width: max-content;
+
+      &:not(:hover) {
+        /* animation: slide 8s linear infinite; */
+      }
+    }
+
+    & .slide {
+      padding: 1.5rem;
+
+      &:has(.card:first-child:hover) .card:nth-child(2),
+      &:has(.card:last-child:hover) .card:nth-child(2) {
+        background-color: var(--shape-base);
+      }
+    }
+
+    & .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: default;
+      width: 17rem;
+      height: 25rem;
+      text-align: start; 
+      background-color: var(--shape-base);
+      border: 1px solid var(--shape-stroke);
+      border-radius: 1.5rem;
+      padding: 2rem 2rem 1.75rem;
+      transition: transform .5s linear, background-color .250s linear;   
+
+      &:hover {
+        background-color: var(--shape-hover);
+        border: 1px solid transparent;
+        box-shadow: 0 0 35px 5px rgba(53, 139, 185, 0.048);
+      }
+
+      &:nth-child(2):hover {
+        background-color: var(--shape-hover);
+      }
+
+      & .title {
+        & > div {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          transform: translateY(-.438rem);
+          & .tag {
+            display: flex;
+            align-items: center;
+            background-color: var(--shape-stroke);
+            border-radius: 999px;
+            padding: .562rem 1.25rem;
+            font: var(--tag);
+            color: var(--text-body);
+          }
+        }
+      }
+
+      &:first-child,
+      &:last-child {
+        & .button {
+          background-color: var(--blue-dark);
+          &::before {
+            background-color: var(--blue-mid);
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        background-color: var(--shape-hover);
+        
+        & .title div {
+          & span:first-child {
+            color: var(--pink-light);
+          }
+        }
+        & h1 {
+          margin-block: 1.062rem .5rem;
+        }
+      }
+
+      & span {
+        font: var(--title-xs);
+        color: var(--blue-light);
+      }
+
+      & h1 {
+        font: var(--title-md);
+        color: var(--text-title);
+        margin-block: 1.5rem .5rem;
+
+        & span {
+          font: var(--title-xs);
+          color: inherit;
+        }
+      }
+
+      & p {
+        font: var(--body-sm-reg);
+        color: var(--text-label);
+      }
+
+      & ul {
+        display: grid;
+        margin-bottom: 1.5rem;
+        gap: .75rem;
+
+        & li {
+          font: var(--body-xs-reg);
+          color: var(--text-body);
+          display: flex;
+          align-items: center;
+          white-space: nowrap;
+          gap: .5rem; 
+
+          &::before {
+            content: "";
+            align-self: center;
+            width: .875rem;
+            aspect-ratio: 1/1;
+            background: url(../assets/pricing/star-blue.svg) no-repeat;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    justify-self: flex-start;
+  }
+  47% {
+    translate: -63%;
+  }
+  45% {
+    translate: -61%;
+  }
+  98% {
+    translate: 2%;
+  }
+  100% {
+    justify-self: flex-start;
+  }
+}
+
+@media (width >= 90em) {
+  #pricing {
+    padding: 12.125rem;
+    gap: .312rem;
+    overflow: visible;
+
+    background-image: url(../assets/pricing/pricing-background.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    &:hover {
+      & .card:first-child {
+        animation: card-1-in 1.5s ease both;
+      }
+      & .card:last-child {
+        animation: card-3-in 1.5s ease both;
+      }
+    }
+
+    &:not(:hover) {
+      & .card:first-child {
+        animation: card-1-out .5s ease forwards;
+      }
+      & .card:last-child {
+        animation: card-3-out .5s ease forwards;
+      }
+    }
+
+    & .cards-wrapper {
+    padding-block: 5.125rem 6.75rem;
+    
+      & .slide {
+        padding: 4rem 3.5rem 7rem;
+        overflow: hidden;
+        }
+
+        & .card {
+          position: relative;
+          scale: 1;
+          transition: all .5s ease;
+
+          &:hover {
+            translate: 0 -.5rem;
+          }
+          
+          &:first-child {
+            z-index: 1;
+
+            &:hover {
+              z-index: 3;
+              &::before {
+                rotate: 15deg;
+              }
+              &::after {
+                rotate: -15deg;
+              }
+            }
+
+            &::before {
+              content: "";
+              position: absolute;
+              inset: 0;
+              width: 1rem;
+              aspect-ratio: 1;
+              top: .5rem;
+              left: -2rem;
+              background: url(../assets/pricing/star-pink.png) no-repeat;
+              background-size: 1rem;
+              transition: rotate .3s linear;
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              inset: 0;
+              width: 2rem;
+              aspect-ratio: 1;
+              top: -2rem;
+              left: -1.5rem;
+              background: url(../assets/pricing/star-pink.png) no-repeat;
+              background-size: 2rem;
+              transition: rotate .3s linear;
+            }
+          }
+          &:nth-child(2) {
+            z-index: 2;
+
+            &:hover {
+              z-index: 1;
+            }
+
+            &::before {
+              content: "";
+              position: absolute;
+              inset: 0;
+              top: -3.155rem;
+              left: 2rem;
+              background: url(../assets/pricing/Bunny.png) no-repeat;
+            }
+          }
+          &:nth-child(3) {
+            z-index: 0; 
+
+            &:hover {
+              z-index: 3;
+              &::before {
+                rotate: 15deg;
+              }
+              &::after {
+                rotate: -15deg;
+              }
+            }
+
+            &::before {
+              content: "";
+              position: absolute;
+              width: 2rem;
+              aspect-ratio: 1;
+              inset: 0;
+              top: 24rem;
+              left: 18rem;
+              background: url(../assets/pricing/star-pink.png) no-repeat;
+              background-size: 2rem;
+              transition: rotate .3s linear;
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              width: 1rem;
+              aspect-ratio: 1;
+              inset: 0;
+              top: 25.5rem;
+              left: 16rem;
+              background: url(../assets/pricing/star-pink.png) no-repeat;
+              background-size: 1rem;
+              transition: rotate .3s linear;
+            }
+          }
+        }
+      }
+    }
+  }
+
+@keyframes slide {
+}
+
+@keyframes card-1-in {
+  0% {
+    transform: translate(21rem, 0rem);
+    scale: .9;
+    rotate: 0deg;
+  }
+  40% {
+    transform: translate(-.4rem, 3.7rem);
+    scale: 1;
+    rotate: -8deg;
+  }
+  60% {
+    transform: translate(.1rem, 3.7rem);
+    scale: 1;
+    rotate: -8deg;
+  }
+
+  100% {
+    transform: translate(0rem, 3.8rem);
+    scale: 1;
+    rotate: -8deg;
+  }
+}
+
+@keyframes card-1-out {
+  0% {
+    transform: translate(0rem, 3.8rem);
+    scale: 1;
+    rotate: -8deg;
+  }
+  100% {
+    transform: translate(21rem, 1rem);
+    scale: .9;
+    rotate: 0deg;
+  }
+}
+
+@keyframes card-3-in {
+  0% {
+    transform: translate(-23.2rem, -1rem);
+    scale: .82;
+    rotate: 0deg;
+  }
+  40% {
+    transform: translate(.4rem, 3.7rem);
+    scale: 1;
+    rotate: 8deg;
+  }
+  60% {
+    transform: translate(-.1rem, 3.7rem);
+    scale: 1;
+    rotate: 8deg;
+  }
+
+  100% {
+    transform: translate(0rem, 3.8rem);
+    scale: 1;
+    rotate: 8deg;
+  }
+}
+
+@keyframes card-3-out {
+  0% {
+    transform: translate(0rem, 3.8rem);
+    scale: 1;
+    rotate: 8deg;
+  }
+  100% {
+    transform: translate(-23.2rem, -1rem);
+    scale: .82;
+    rotate: 0deg;
+  }
+}
+
+

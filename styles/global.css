@@ -11,6 +11,7 @@
   --title-lg: 700 1.75rem/normal var(--font-family);
   --title-md: 700 2.5rem/normal var(--font-family);
   --title-sm: 700 1.5rem/normal var(--font-family);
+  --title-xs: 700 1rem/normal var(--font-family);
   --subtitle: 500 1rem/1.4 var(--font-family);
   --body-lg-reg: 400 .875rem/1.4 var(--font-family);
   --body-lg-bold: 700 1.25rem/1.4 var(--font-family);
@@ -18,7 +19,7 @@
   --body-md-bold: 700 1rem/1.4 var(--font-family);
   --body-sm-reg: 400 .875rem/1.4 var(--font-family);
   --body-md-bold: 700 .875rem/1.4 var(--font-family);
-  --body-xs-reg: 400 .625rem/normal var(--font-family);
+  --body-xs-reg: 400 .75rem/normal var(--font-family);
   --body-md-bold: 700 .75rem/1.4 var(--font-family);
   --button: 700 .875rem/normal var(--font-family);
   --link: 500 .875rem/normal var(--font-family);
@@ -53,7 +54,8 @@ body {
 }
 
 html {
-  zoom: 1;
+
+  zoom: .5;
 }
 
 h1 {
@@ -78,7 +80,6 @@ a {
     --title-lg: 700 3rem/normal var(--font-family);
     --title-md: 700 2.5rem/normal var(--font-family);
     --title-sm: 700 2rem/normal var(--font-family);
-    --title-xs: 700 1rem/normal var(--font-family);
     --subtitle: 500 2rem/2 var(--font-family);
     --body-lg-reg: 400 1.25rem/1.4 var(--font-family);
     --body-md-reg: 400 1rem/1.4 var(--font-family);

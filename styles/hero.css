@@ -68,6 +68,19 @@
     margin-inline: 1.25rem;
     padding-block: 3.75rem 2rem;
 
+    &::before {
+      content: "";
+      position: absolute;
+      align-self: center;
+      justify-self: center;
+      z-index: -1;
+      width: 20rem;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      background: var(--pink-low);
+      filter: blur(160px);
+    }
+
     & p {
       font: var(--subtitle);
       color: var(--text-body);
@@ -148,7 +161,6 @@
 @media (width >= 90em) {
 
   #hero {
-    /* width: 90rem; */
     margin-bottom: 19.4375rem;
 
     & .book {
@@ -179,9 +191,13 @@
       margin-inline: 5.1rem;
       padding-block: 6rem 4.75rem;
       position: relative;
-
-      opacity: 0;
+       opacity: 0;
       animation: text-appear 800ms 600ms linear forwards;
+
+      &::before {
+        width: 80rem;
+        filter: blur(550px);
+      }
 
       & .wrap {
         display: inline;
